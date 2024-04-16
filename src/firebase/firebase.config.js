@@ -4,13 +4,15 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyD5t8sldRyoEzuicQC5GxlqUtopigFDrWY",
-  authDomain: "react-dragon-news-auth.firebaseapp.com",
-  projectId: "react-dragon-news-auth",
-  storageBucket: "react-dragon-news-auth.appspot.com",
-  messagingSenderId: "750044483429",
-  appId: "1:750044483429:web:77f4f5d3f33234b21f5b8c"
+  apiKey: "AIzaSyALleunl-RakYiNQtuHLKIFZTYmugaYO7c",
+  authDomain: "react-dragon-news-auth-3caaa.firebaseapp.com",
+  projectId: "react-dragon-news-auth-3caaa",
+  storageBucket: "react-dragon-news-auth-3caaa.appspot.com",
+  messagingSenderId: "260247438399",
+  appId: "1:260247438399:web:b1dfa3d414d751559d248a",
+  measurementId: "G-WR4L6SYYVE"
 };
 
 // Initialize Firebase
