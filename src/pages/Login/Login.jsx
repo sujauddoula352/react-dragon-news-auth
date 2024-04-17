@@ -1,19 +1,31 @@
 import { Link } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Login = () => {
-    const handleLogin = e =>{
+    const { SingIn } = useContext(AuthContext)
+    const handleLogin = e => {
         e.preventDefault();
-        console.log(e.currentTarget)
-        // const email = e.target.email.value
+    
         const form = new FormData(e.currentTarget);
-        console.log(form.get('email'))
+        const email = form.get('email');
+        const password = form.get('password');
+        //SingIn 
+       console.log(email, password);
+       SingIn(email, password)
+       .then(result => {
+        console.log(result)
+       })
+       .then ( error => {
+        console.log(error)
+       } )
     }
     return (
         <div>
             <Navbar></Navbar>
-           <div>
-           <h2 className="text-3xl my-10 text-center">Please Login</h2>
+            <div>
+                <h2 className="text-3xl my-10 text-center">Please Login</h2>
                 <form onSubmit={handleLogin} className="md:w-3/4 lg:1/2 mx-auto">
                     <div className="form-control">
                         <label className="label text-3xl font-semibold">Email
@@ -33,7 +45,7 @@ const Login = () => {
                     </div>
                 </form>
                 <p className="text-center my-4">Do not Have an Account? <Link className="text-blue-600 font-semibold" to='/register'>Register</Link></p>
-           </div>
+            </div>
         </div>
     );
 };
